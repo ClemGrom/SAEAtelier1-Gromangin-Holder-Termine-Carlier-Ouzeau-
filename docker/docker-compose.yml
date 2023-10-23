@@ -1,0 +1,69 @@
+version: "3"
+
+networks:
+  nrv.net:
+    driver: bridge
+
+services:
+
+  php:
+    hostname: interface-backend
+    image: canals/php
+    ports:
+      - "20000:80"
+    volumes:
+      - ../nrv.appli/public:/var/www/html
+      - ../nrv.appli/src:/var/www/src
+    working_dir: /var/www/src
+    networks:
+      - nrv.net
+    depends_on:
+      - sql
+
+  sql:
+    hostname: mysql
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./databases:/var/lib/mysql
+    ports:
+      - "20001:3306"
+    networks:
+      - nrv.net
+
+  phpmyadmin:
+    hostname: php-my-admin
+    image: phpmyadmin
+    environment:
+      - PMA_HOST=sql
+    ports:
+      - "20002:80"
+    networks:
+      - nrv.net
+    depends_on:
+      - sql
+
+  api:
+    hostname: api
+    image: canals/php
+    ports:
+      - 20003:80
+    volumes:
+      - ../nrv.api/public:/var/www/html
+      - ../nrv.api/src:/var/www/src
+    working_dir: /var/www/src
+    networks:
+      - nrv.net
+    depends_on:
+      - sql
+
+  nginx:
+    hostname: nginx
+    image: nginx
+    ports:
+      - "20004:80"
+    volumes:
+      - ../nrv.web:/usr/share/nginx/html
+    networks:
+      - nrv.net
