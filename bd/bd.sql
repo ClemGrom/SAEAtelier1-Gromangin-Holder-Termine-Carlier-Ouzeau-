@@ -58,6 +58,15 @@ CREATE TABLE IF NOT EXISTS `commande`
     FOREIGN KEY (`id_utilisateur`) REFERENCES `utilisateur` (`uuid`)
     );
 
+DROP TABLE IF EXISTS `tarifs`;
+CREATE TABLE IF NOT EXISTS `tarifs`
+(
+    `id`           int NOT NULL AUTO_INCREMENT,
+    `tarif_normal` int NOT NULL,
+    `tarif_reduit` int NOT NULL,
+    PRIMARY KEY (`id`)
+);
+
 DROP TABLE IF EXISTS `soiree`;
 CREATE TABLE IF NOT EXISTS `soiree`
 (
@@ -71,15 +80,6 @@ CREATE TABLE IF NOT EXISTS `soiree`
     FOREIGN KEY (`lieu`) REFERENCES `lieu` (`id`),
     FOREIGN KEY (`theme`) REFERENCES `theme` (`id`),
     FOREIGN KEY (`id_tarif`) REFERENCES `tarifs` (`id`)
-    );
-
-DROP TABLE IF EXISTS `tarifs`;
-CREATE TABLE IF NOT EXISTS `tarifs`
-(
-    `id`           int NOT NULL AUTO_INCREMENT,
-    `tarif_normal` int NOT NULL,
-    `tarif_reduit` int NOT NULL,
-    PRIMARY KEY (`id`)
     );
 
 DROP TABLE IF EXISTS `reservation`;
