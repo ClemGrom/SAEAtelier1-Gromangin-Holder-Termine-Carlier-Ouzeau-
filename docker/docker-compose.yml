@@ -37,6 +37,7 @@ services:
     hostname: mysql
     image: mysql
     environment:
+      - MYSQL_ROOT_PASSWORD=rootpassuseless
       - MYSQL_USER=nrvuser
       - MYSQL_PASSWORD=nrvpass
       - MYSQL_DATABASE=nrvdb
