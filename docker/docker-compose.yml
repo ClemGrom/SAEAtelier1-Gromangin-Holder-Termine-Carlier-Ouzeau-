@@ -1,26 +1,34 @@
 version: "3"
 
 networks:
-  nrv.net:
+  nrv.db.1:
+    driver: bridge
+  nrv.db.2:
+    driver: bridge
+  nrv.net.1:
+    driver: bridge
+  nrv.net.2:
     driver: bridge
 
 services:
 
-  php:
+  php-api:
     hostname: interface-backend
     image: canals/php
     ports:
-      - "20000:80"
+      - "8021:80"
     volumes:
       - ../nrv.appli/public:/var/www/html
       - ../nrv.appli/src:/var/www/src
     working_dir: /var/www/src
     networks:
-      - nrv.net
+      - nrv.db.1
+      - nrv.net.1
+      - nrv.net.2
     depends_on:
-      - sql
+      - mysql-db
 
-  sql:
+  mysql-db:
     hostname: mysql
     image: mysql
     environment:
@@ -28,42 +36,43 @@ services:
     volumes:
       - ./databases:/var/lib/mysql
     ports:
-      - "20001:3306"
+      - "8001:3306"
     networks:
-      - nrv.net
+      - nrv.db.1
+      - nrv.db.2
 
-  phpmyadmin:
+  phpmyadmin-manager:
     hostname: php-my-admin
     image: phpmyadmin
     environment:
-      - PMA_HOST=sql
+      - PMA_HOST=mysql-db
     ports:
-      - "20002:80"
+      - "8011:80"
     networks:
-      - nrv.net
+      - nrv.db.2
     depends_on:
-      - sql
+      - mysql-db
 
-  api:
-    hostname: api
-    image: canals/php
-    ports:
-      - 20003:80
-    volumes:
-      - ../nrv.api/public:/var/www/html
-      - ../nrv.api/src:/var/www/src
-    working_dir: /var/www/src
-    networks:
-      - nrv.net
-    depends_on:
-      - sql
-
-  nginx:
-    hostname: nginx
+  nginx-client:
+    hostname: nginx-client
     image: nginx
     ports:
-      - "20004:80"
+      - "8121:80"
     volumes:
-      - ../nrv.web:/usr/share/nginx/html
+      - ../nrv.web/client:/usr/share/nginx/html
     networks:
-      - nrv.net
+      - nrv.net.1
+    depends_on:
+      - php-api
+
+  nginx-backoffice:
+    hostname: nginx-backoffice
+    image: nginx
+    ports:
+      - "8221:80"
+    volumes:
+      - ../nrv.web/backoffice:/usr/share/nginx/html
+    networks:
+      - nrv.net.2
+    depends_on:
+      - php-api
