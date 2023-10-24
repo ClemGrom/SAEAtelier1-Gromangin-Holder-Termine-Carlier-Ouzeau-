@@ -18,8 +18,8 @@ services:
     ports:
       - "8021:80"
     volumes:
-      - ../nrv.appli/public:/var/www/html
-      - ../nrv.appli/src:/var/www/src
+      - ../nrv.api/public:/var/www/html
+      - ../nrv.api/src:/var/www/src
     working_dir: /var/www/src
     networks:
       - nrv.db.1
