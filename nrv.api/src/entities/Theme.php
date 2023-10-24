@@ -15,12 +15,12 @@ class Theme extends Model
 
     public function spectacles()
     {
-        return $this->hasMany(Spectacle::class, 'id');
+        return $this->hasMany(Spectacle::class, 'id_theme');
     }
 
     public function soirees()
     {
-        return $this->hasMany(Soiree::class, 'id');
+        return $this->hasMany(Soiree::class, 'theme');
     }
 
 }

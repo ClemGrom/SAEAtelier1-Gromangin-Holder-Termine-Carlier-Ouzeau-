@@ -10,7 +10,7 @@ class Lieu extends Model
     protected $primaryKey = "id";
     public $incrementing = true;
 
-    protected $fillable = ["nom", "adresse", "nb_places_assises", "nb_places_debout"];
+    protected $fillable = ["nom", "adresse", "nb_place_assises", "nb_place_debout"];
 
     public function soirees()
     {

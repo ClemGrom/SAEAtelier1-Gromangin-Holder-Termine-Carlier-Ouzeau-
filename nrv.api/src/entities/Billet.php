@@ -8,6 +8,7 @@ class Billet extends Model
 {
     protected $table = "billet";
     protected $primaryKey = "uuid";
+    protected $keyType = "string";
 
     protected $fillable = ["id_reservation"];
 

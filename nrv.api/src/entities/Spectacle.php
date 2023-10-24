@@ -10,27 +10,27 @@ class Spectacle extends Model
     protected $primaryKey = "id";
     public $incrementing = true;
 
-    protected $fillable = ['titre', 'description', 'id_soiree', 'id_theme', 'video'];
+    protected $fillable = ['titre', 'description', 'id_soiree', 'id_theme', 'horaire'];
 
     public function soiree()
     {
-        return $this->belongsTo(Soiree::class, 'id');
+        return $this->belongsTo(Soiree::class, 'id_soiree');
     }
 
     public function theme()
     {
-        return $this->belongsTo(Theme::class, 'id');
+        return $this->belongsTo(Theme::class, 'id_theme');
     }
 
-    public function spectacles()
+    public function artistes()
     {
-        return $this->belongsToMany(Artiste::class, 'spectacle_artiste', 'id_spectacle', 'id_artiste')
+        return $this->belongsToMany(Artiste::class, 'artiste', 'id_spectacle', 'id_artiste')
             ->withPivot("participation");
     }
 
     public function medias()
     {
-        return $this->belongsToMany(Media::class, 'spectacle_media', 'id_spectacle', 'id_media')
+        return $this->belongsToMany(Media::class, 'media', 'id_spectacle', 'id_media')
             ->withPivot("illustration_spectacle");
     }
 

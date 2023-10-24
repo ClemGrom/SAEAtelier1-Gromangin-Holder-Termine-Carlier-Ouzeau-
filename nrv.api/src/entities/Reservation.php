@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class Reservation extends Model
 {
     protected $table = 'reservation';
-    protected $primaryKey = 'id';
-    public $incrementing = true;
+    protected $primaryKey = 'uuid';
+    protected $keyType = "string";
     protected $fillable = ["id_commande", "id_soiree", "type_tarif", "nb_places"];
 
     public function commande()

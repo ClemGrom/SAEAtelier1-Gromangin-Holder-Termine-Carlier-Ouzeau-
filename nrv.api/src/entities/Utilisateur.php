@@ -8,12 +8,11 @@ class Utilisateur extends Model
 {
     protected $table = "utilisateur";
     protected $primaryKey = "uuid";
-    public $incrementing = true;
-
+    protected $keyType = "string";
     protected $fillable = ["nom", "prenom", "email", "password", "admin"];
 
     public function commandes()
     {
-        return $this->hasMany(Commande::class, 'id_client');
+        return $this->hasMany(Commande::class, 'id_utilisateur');
     }
 }

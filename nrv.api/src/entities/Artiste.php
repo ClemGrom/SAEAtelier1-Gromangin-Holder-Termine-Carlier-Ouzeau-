@@ -13,7 +13,7 @@ class Artiste extends Model
 
     public function spectacles()
     {
-        return $this->belongsToMany(Spectacle::class, 'spectacle_artiste', 'id_artiste', 'id_spectacle')
+        return $this->belongsToMany(Spectacle::class, 'spectacle', 'id_artiste', 'id_spectacle')
             ->withPivot("participation");
     }
 }

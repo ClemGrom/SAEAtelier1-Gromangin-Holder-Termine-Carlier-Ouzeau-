@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Media extends Model
 {
-    protected $table = "Media";
+    protected $table = "media";
     protected $primaryKey = "id";
     public $incrementing = true;
 
