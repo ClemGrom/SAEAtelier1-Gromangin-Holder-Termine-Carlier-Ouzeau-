@@ -5,3 +5,4 @@ vendor/
 *.iml
 .idea/
 docker/databases/
+.vscode/
