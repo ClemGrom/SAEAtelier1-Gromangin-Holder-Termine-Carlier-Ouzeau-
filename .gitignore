@@ -4,3 +4,4 @@ vendor/
 *.lock
 *.iml
 .idea/
+docker/databases/
