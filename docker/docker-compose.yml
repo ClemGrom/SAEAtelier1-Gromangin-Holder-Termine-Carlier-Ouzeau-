@@ -27,12 +27,19 @@ services:
       - nrv.net.2
     depends_on:
       - mysql-db
+    environment:
+      - DB_HOST=mysql-db
+      - DB_USER=nrvuser
+      - DB_PASSWORD=nrvpass
+      - DB_NAME=nrvdb
 
   mysql-db:
     hostname: mysql
     image: mysql
     environment:
-      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=nrvuser
+      - MYSQL_PASSWORD=nrvpass
+      - MYSQL_DATABASE=nrvdb
     volumes:
       - ./databases:/var/lib/mysql
     ports:
