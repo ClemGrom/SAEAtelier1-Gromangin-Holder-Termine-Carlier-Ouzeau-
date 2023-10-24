@@ -10,7 +10,7 @@ class Media extends Model
     protected $primaryKey = "id";
     public $incrementing = true;
 
-    protected $fillable = ["nom", "lien", "description"];
+    protected $fillable = ["lien", "description"];
 
     public function spectacles()
     {

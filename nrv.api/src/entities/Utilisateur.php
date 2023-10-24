@@ -12,5 +12,8 @@ class Utilisateur extends Model
 
     protected $fillable = ["nom", "prenom", "email", "password", "admin"];
 
-
+    public function commandes()
+    {
+        return $this->hasMany(Commande::class, 'id_client');
+    }
 }

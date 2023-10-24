@@ -18,7 +18,7 @@ class Soiree extends Model
 
     public function tarif()
     {
-        return $this->belongsTo(Tarif::class, 'id');
+        return $this->hasMany(Tarif::class, 'id');
     }
 
     public function lieu()
@@ -29,11 +29,6 @@ class Soiree extends Model
     public function spectacles()
     {
         return $this->hasMany(Spectacle::class, 'id');
-    }
-
-    public function billets()
-    {
-        return $this->hasMany(Billet::class, 'id');
     }
 
     public function reservations()

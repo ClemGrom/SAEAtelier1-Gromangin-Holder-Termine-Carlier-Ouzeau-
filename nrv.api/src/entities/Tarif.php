@@ -16,8 +16,4 @@ class Tarif extends Model
         return $this->belongsTo(Soiree::class, 'soiree');
     }
 
-    public function billets()
-    {
-        return $this->hasMany(Billet::class, 'id_tarif');
-    }
 }
