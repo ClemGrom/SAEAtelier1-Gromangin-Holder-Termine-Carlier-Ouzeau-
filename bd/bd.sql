@@ -66,7 +66,6 @@ CREATE TABLE IF NOT EXISTS `soiree`
     `theme`   int          NOT NULL,
     `date`    timestamp    NOT NULL,
     `lieu`    int          NOT NULL,
-    `tarif`   int          NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`lieu`) REFERENCES `lieu` (`id`),
     FOREIGN KEY (`theme`) REFERENCES `theme` (`id`)
