@@ -66,20 +66,20 @@ CREATE TABLE IF NOT EXISTS `soiree`
     `theme`   int          NOT NULL,
     `date`    timestamp    NOT NULL,
     `lieu`    int          NOT NULL,
+    `id_tarif`   int          NOT NULL,
     PRIMARY KEY (`id`),
     FOREIGN KEY (`lieu`) REFERENCES `lieu` (`id`),
-    FOREIGN KEY (`theme`) REFERENCES `theme` (`id`)
+    FOREIGN KEY (`theme`) REFERENCES `theme` (`id`),
+    FOREIGN KEY (`id_tarif`) REFERENCES `tarifs` (`id`)
     );
 
 DROP TABLE IF EXISTS `tarifs`;
 CREATE TABLE IF NOT EXISTS `tarifs`
 (
     `id`           int NOT NULL AUTO_INCREMENT,
-    `id_soiree`    int NOT NULL,
     `tarif_normal` int NOT NULL,
     `tarif_reduit` int NOT NULL,
-    PRIMARY KEY (`id`),
-    FOREIGN KEY (`id_soiree`) REFERENCES `soiree` (`id`)
+    PRIMARY KEY (`id`)
     );
 
 DROP TABLE IF EXISTS `reservation`;
