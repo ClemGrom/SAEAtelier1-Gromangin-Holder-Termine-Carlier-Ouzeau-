@@ -3,6 +3,7 @@
 namespace nrv\api\services;
 
 use nrv\api\entities\Spectacle;
+use nrv\api\dto\SpectacleDTO;
 
 class SpectacleServices
 {

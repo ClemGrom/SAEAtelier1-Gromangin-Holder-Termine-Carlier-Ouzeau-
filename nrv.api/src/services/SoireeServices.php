@@ -12,4 +12,6 @@ class SoireeServices
         return Soiree::where('id', '=', $id)->firstOrFail()->toDTO();
     }
 
+    
+
 }
