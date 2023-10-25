@@ -16,4 +16,10 @@ class Artiste extends Model
         return $this->belongsToMany(Spectacle::class, 'spectacle', 'id_artiste', 'id_spectacle')
             ->withPivot("participation");
     }
+
+    public function toDTO(): ArtisteDTO
+    {
+        return new ArtisteDTO($this->id, $this->nom_scene, $this->nom, $this->prenom);
+
+    }
 }
