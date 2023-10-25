@@ -10,8 +10,9 @@ class SpectacleDTO extends DTO
     public string $horaire;
     public int $id_soiree;
     public ThemeDTO $id_theme;
+    public array $id_artistes;
 
-    public function __construct(string $id, string $titre, string $description, string $horaire, int $id_soiree, ThemeDTO $id_theme)
+    public function __construct(string $id, string $titre, string $description, string $horaire, int $id_soiree, ThemeDTO $id_theme, array $id_artistes)
     {
         $this->id = $id;
         $this->titre = $titre;
@@ -19,6 +20,7 @@ class SpectacleDTO extends DTO
         $this->horaire = $horaire;
         $this->id_soiree = $id_soiree;
         $this->id_theme = $id_theme;
+        $this->id_artistes = $id_artistes;
     }
 
 
