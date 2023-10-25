@@ -1,4 +1,5 @@
 <?php
+
 namespace nrv\api\dto;
 
 class ArtisteDTO extends DTO
