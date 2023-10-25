@@ -2,17 +2,18 @@
 
 namespace nrv\api\dto;
 
-class TarifDTO extends DTO{
+class TarifDTO extends DTO
+{
     public string $id;
-    public string $nom;
-    public float $prix;
-    public string $description;
+    public float $tarif_normal;
+    public float $tarif_reduit;
+    public int $id_soiree;
 
-    public function __construct(string $id, string $nom, float $prix, string $description)
+    public function __construct(string $id, float $tarif_normal, float $tarif_reduit, int $id_soiree)
     {
         $this->id = $id;
-        $this->nom = $nom;
-        $this->prix = $prix;
-        $this->description = $description;
+        $this->tarif_normal = $tarif_normal;
+        $this->tarif_reduit = $tarif_reduit;
+        $this->id_soiree = $id_soiree;
     }
 }
