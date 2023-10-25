@@ -11,8 +11,9 @@ class SoireeDTO extends DTO
     public LieuDTO $lieu;
     public TarifDTO $tarif;
     public array $spectacles;
+    public int $nb_reservations;
 
-    public function __construct(int $id, string $nom, ThemeDTO $theme, \DateTime $date, LieuDTO $lieu, TarifDTO $tarif, array $spectacles)
+    public function __construct(int $id, string $nom, ThemeDTO $theme, \DateTime $date, LieuDTO $lieu, TarifDTO $tarif, array $spectacles, int $nb_reservations)
     {
         $this->id = $id;
         $this->nom = $nom;
@@ -21,5 +22,7 @@ class SoireeDTO extends DTO
         $this->lieu = $lieu;
         $this->tarif = $tarif;
         $this->spectacles = $spectacles;
+        $this->nb_reservations = $nb_reservations;
     }
+
 }
