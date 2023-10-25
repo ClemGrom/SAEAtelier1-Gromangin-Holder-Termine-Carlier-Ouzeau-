@@ -3,6 +3,8 @@
 namespace nrv\api\entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use nrv\api\dto\UtilisateurDTO;
 
 class Utilisateur extends Model
 {
@@ -11,8 +13,22 @@ class Utilisateur extends Model
     protected $keyType = "string";
     protected $fillable = ["nom", "prenom", "email", "password", "admin"];
 
-    public function commandes()
+    public function commandes() : HasMany
     {
         return $this->hasMany(Commande::class, 'id_utilisateur');
     }
+
+    public function toDTO() : UtilisateurDTO {
+        return new UtilisateurDTO(
+            $this->uuid,
+            $this->nom,
+            $this->prenom,
+            $this->email,
+            $this->admin,
+            $this->commandes()->get()->map(function($commande) {
+                return $commande->toDTO();
+            })->toArray()
+        );
+    }
+
 }
