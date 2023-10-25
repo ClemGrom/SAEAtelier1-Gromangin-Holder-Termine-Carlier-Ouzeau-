@@ -15,7 +15,7 @@ class GetSpectaclesAPIAction
     {
 
         try {
-            $spectacles= $this->container->get('spectacle.service')->accederSpectacles();
+            $spectacles=
             $data=["spectacles"=>[]];
             foreach ($spectacle in $spectacles){
                 $data['spectacles'][] = [$spectacle];
