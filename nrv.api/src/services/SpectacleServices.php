@@ -16,4 +16,9 @@ class SpectacleServices
         }
         return $spectaclesDTO;
     }
+
+    public function getSpectacle(int $id): SpectacleDTO
+    {
+        return Spectacle::where('id', '=', $id)->firstOrFail()->toDTO();
+    }
 }
