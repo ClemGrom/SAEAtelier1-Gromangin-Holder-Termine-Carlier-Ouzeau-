@@ -3,6 +3,9 @@
 namespace nrv\api\entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use nrv\api\dto\CommandeDTO;
 
 class Commande extends Model
 {
@@ -12,15 +15,25 @@ class Commande extends Model
     protected $keyType = "string";
     protected $fillable = ["id_utilisateur", "statut"];
 
-    public function utilisateur()
+    public function utilisateur() : BelongsTo
     {
         return $this->belongsTo(Utilisateur::class, 'id_utilisateur');
     }
 
-    public function reservations()
+    public function reservations() : HasMany
     {
         return $this->hasMany(Reservation::class, 'id_commande');
     }
 
+    public function toDTO() : CommandeDTO {
+        return new CommandeDTO(
+            $this->uuid,
+            $this->statut,
+            $this->utilisateur()->first()->uuid,
+            $this->reservations()->get()->map(function($reservation) {
+                return $reservation->toDTO();
+            })->toArray()
+        );
+    }
 
 }

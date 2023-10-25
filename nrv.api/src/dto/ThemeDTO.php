@@ -12,8 +12,9 @@ class ThemeDTO extends DTO
 
     public array $id_spectacles; //Tableau de id de spectacles
 
-    public function __construct(string $name, array $soirees, array $spectacles)
+    public function __construct(int $id, string $name, array $soirees, array $spectacles)
     {
+        $this->id = $id;
         $this->name = $name;
         $this->id_soirees = $soirees;
         $this->id_spectacles = $spectacles;
