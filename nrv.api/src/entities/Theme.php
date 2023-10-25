@@ -3,6 +3,8 @@
 namespace nrv\api\entities;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use nrv\api\dto\ThemeDTO;
 
 class Theme extends Model
 {
@@ -13,14 +15,23 @@ class Theme extends Model
 
     protected $fillable = ['nom'];
 
-    public function spectacles()
+    public function spectacles() : HasMany
     {
         return $this->hasMany(Spectacle::class, 'id_theme');
     }
 
-    public function soirees()
+    public function soirees() : HasMany
     {
         return $this->hasMany(Soiree::class, 'theme');
+    }
+
+    public function toDTO() : ThemeDTO {
+        return new ThemeDTO(
+            $this->id,
+            $this->nom,
+            $this->spectacles()->pluck("id")->toArray(),
+            $this->soirees()->pluck("id")->toArray()
+        );
     }
 
 }
