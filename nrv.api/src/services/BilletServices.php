@@ -2,6 +2,9 @@
 
 namespace nrv\api\services;
 
+use nrv\api\dto\BilletDTO;
+use nrv\api\entities\Billet;
+
 class BilletServices
 {
     function getBillet(string $uuid): BilletDTO

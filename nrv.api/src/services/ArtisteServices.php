@@ -4,6 +4,7 @@
 namespace nrv\api\services;
 
 use nrv\api\entities\Artiste;
+use nrv\api\dto\ArtisteDTO;
 
 class ArtisteServices
 {
