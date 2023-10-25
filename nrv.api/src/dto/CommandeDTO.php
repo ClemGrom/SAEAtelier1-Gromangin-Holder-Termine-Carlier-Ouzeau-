@@ -1,18 +1,18 @@
 <?php
 namespace nrv\api\dto;
 
-use Illuminate\Container\Util;
-
 class CommandeDTO extends DTO{
     public string $uuid;
-    public int $status;
-    public UtilisateurDTO $utilisateur;
+    public int $statut;
+    public string $id_utilisateur;
+    public array $reservations;
 
-    function __construct(string $uuid, int $status, UtilisateurDTO $utilisateur)
+    function __construct(string $uuid, int $statut, string $utilisateur, array $reservations)
     {
         $this->uuid = $uuid;
-        $this->status = $status;
-        $this->utilisateur = $utilisateur;
+        $this->statut = $statut;
+        $this->id_utilisateur = $utilisateur;
+        $this->reservations = $reservations;
     }
 
 }

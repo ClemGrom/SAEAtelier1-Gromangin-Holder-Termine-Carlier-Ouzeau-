@@ -4,12 +4,12 @@ namespace nrv\api\dto;
 class BilletDTO extends DTO
 {
     public string $uuid;
-    public ReservationDTO $reservation;
+    public string $id_reservation;
 
-    function __construct(string $uuid, ReservationDTO $reservation)
+    function __construct(string $uuid, string $id_reservation)
     {
         $this->uuid = $uuid;
-        $this->reservation = $reservation;
+        $this->id_reservation = $id_reservation;
     }
    
 
