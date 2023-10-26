@@ -51,7 +51,6 @@ if (nbjson !== 0) {
         
         
         let billet = document.createElement('div');
-        
         // lien image
         let linkpic = document.createElement('a');
         billet.appendChild(linkpic);

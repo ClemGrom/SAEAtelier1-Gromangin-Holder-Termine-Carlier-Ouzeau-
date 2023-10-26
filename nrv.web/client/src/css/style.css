@@ -20,7 +20,7 @@ button, button:visited, button:active {
 }
 
 h1 {
-  background-color: pink;
+  background-color: #F7596F;
   font-size: 2.5em;
 }
 
@@ -31,7 +31,7 @@ header {
   padding: 10px;
   width: 94.6%;
   margin-left: 2.7%;
-  background-color: pink;
+  background-color: #F7596F;
 }
 header img {
   width: 94.6%;
@@ -55,7 +55,7 @@ header nav button:first-child {
 footer {
   width: 94.6%;
   margin-left: 2.7%;
-  background-color: powderblue;
+  background-color: #32BFE0;
   text-align: center;
 }
 footer nav {

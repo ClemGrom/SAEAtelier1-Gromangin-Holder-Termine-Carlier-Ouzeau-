@@ -18,6 +18,9 @@ section {
     @include grille($nbcolonne, $largeurgoutiere, 12, 0);
   }
   div {
+    display:flex;
+    flex-wrap: wrap;
+    font-size:0.8em;
     @include grille($nbcolonne, $largeurgoutiere, 12, 0);
     img {
       height: 200px;
