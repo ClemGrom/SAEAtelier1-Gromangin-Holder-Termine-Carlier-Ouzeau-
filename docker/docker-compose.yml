@@ -14,13 +14,13 @@ services:
 
   php-api:
     hostname: interface-backend
-    image: canals/php
+    image: 'canals/php:latest'
     ports:
       - "8021:80"
     volumes:
       - ../nrv.api/public:/var/www/html
       - ../nrv.api/src:/var/www/src
-    working_dir: /var/www/src
+    working_dir: /var/www/html
     networks:
       - nrv.db.1
       - nrv.net.1

@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 require_once __DIR__ .
     DIRECTORY_SEPARATOR . '..' .
@@ -24,6 +25,7 @@ $appli = require_once __DIR__ .
 )
 ($appli);
 
+$appli->getBasePath();
 $appli->run();
 
 //print the full url of "spectacles" route
