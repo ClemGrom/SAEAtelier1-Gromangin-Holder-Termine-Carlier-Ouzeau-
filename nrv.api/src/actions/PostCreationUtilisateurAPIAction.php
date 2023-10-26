@@ -1,6 +1,6 @@
 <?php
 
-namespace nrv\api\action;
+namespace nrv\api\actions;
 
 use Exception;
 use nrv\api\renderer\JSONRenderer;
