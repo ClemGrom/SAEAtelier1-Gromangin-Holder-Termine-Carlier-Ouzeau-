@@ -3,14 +3,9 @@ body {
   padding: 0;
 }
 
-.row, section {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col {
-  margin-left: 2.7%;
-  padding-bottom: 20px;
+body {
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -74,14 +69,18 @@ footer nav {
 }
 
 section {
+  display: flex;
+  flex-wrap: wrap;
   width: 94.6%;
   margin-left: 2.7%;
 }
 section h1 {
+  font-size: 1em;
   width: 94.6%;
   margin-left: 2.7%;
 }
 section h2 {
+  font-size: 0.8em;
   width: 94.6%;
   margin-left: 2.7%;
 }

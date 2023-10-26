@@ -8,16 +8,6 @@ body {
   padding: 0;
 }
 
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.col {
-  margin-left: 2.7%;
-  padding-bottom: 20px;
-}
-
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 20px;
@@ -76,6 +66,10 @@ footer {
 footer nav {
   width: 94.6%;
   margin-left: 2.7%;
+}
+
+h1 {
+  font-size: 1.8em;
 }
 
 div {

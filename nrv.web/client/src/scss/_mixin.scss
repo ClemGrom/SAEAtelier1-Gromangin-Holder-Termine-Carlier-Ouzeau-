@@ -1,16 +1,6 @@
 $nombre-colonnes: 12;
 $largeur-gouttieres: 2.7%;
 
-.row{
-  display:flex;
-  flex-wrap:wrap;
-}
-
-.col{
-  margin-left: $largeur-gouttieres;
-  padding-bottom:20px;
-}
-
 @mixin grille($nombre-colonnes, $largeurgoutiere, $largeur-colonne, $offset) {
   $nombre-gouttieres: $nombre-colonnes + 1;
   $largeur-colonne: calc((100% - ($nombre-gouttieres * $largeur-gouttieres)) / $nombre-colonnes);

@@ -1,16 +1,20 @@
+@import '_reset.scss';
 @import "style.scss";
 
 $nbcolonne:12;
-$largeurgoutiere:0%;
+$largeurgoutiere:2.7%;
 
 section {
-  @extend .row;
+  display:flex;
+  flex-wrap: wrap;
   @include grille($nbcolonne, $largeurgoutiere, 10, 0);
   h1 {
+    font-size: 1em;
     @include grille($nbcolonne, $largeurgoutiere, 12, 0);
   }
 
   h2 {
+    font-size: 0.8em;
     @include grille($nbcolonne, $largeurgoutiere, 12, 0);
   }
   div {
