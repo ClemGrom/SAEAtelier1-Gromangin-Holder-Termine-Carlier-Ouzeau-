@@ -5,6 +5,7 @@ namespace nrv\api\config\containers;
 use nrv\api\actions\GetSoireeAPIAction;
 use nrv\api\actions\GetSpectacleAPIAction;
 use nrv\api\actions\GetSpectaclesAPIAction;
+use nrv\api\actions\PostCreationUtilisateurAPIAction;
 use Psr\Container\ContainerInterface;
 
 return [
@@ -16,5 +17,8 @@ return [
         },
         GetSpectaclesAPIAction::class => function (ContainerInterface $container) {
             return new GetSpectaclesAPIAction($container->get("spectacle.service"));
+        },
+        PostCreationUtilisateurAPIAction::class => function (ContainerInterface $container) {
+            return new PostCreationUtilisateurAPIAction($container->get("utilisateur.service"));
         },
 ];
