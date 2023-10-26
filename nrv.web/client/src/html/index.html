@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <title>Programme - NRV</title>
         <link rel="stylesheet" href="../css/style.css">
+        <script src="../js/script_programme.js" defer></script>
     </head>
     <body>
         <header>
@@ -23,32 +24,27 @@
             </nav>
         </header>
 
-        <div>
+        <section>
             <h1>Programmation</h1>
             <nav>
-                <button>
-                    <!-- Bouton -->
-                </button>
-                <button>
-                    <!-- Bouton -->
-                </button>
+                <select name="filtrelieu" id="fllieu">
+                    <option value="">--Choix du lieu--</option>
+                </select>
+                <select name="filtreartiste" id="flartiste">
+                    
+                    <option value="">--Choix de l'artiste--</option>
+                </select>
+                <select name="filtrestyle" id="flstyle">
+                    
+                    <option value="">--Choix du style--</option>
+                </select>
+                <select name="filtredate" id="fldate">
+                    
+                    <option value="">--Choix de la date--</option>
+                </select>
+
             </nav>
-            <div>
-                <div>
-                    <!-- Div -->
-                </div>
-                <div>
-                    <!-- Div -->
-                </div>
-            </div>
-
-            <div> <!-- Boucle autant que voulu -->
-                <div>
-                    <!-- Div -->
-                </div>
-                <div>
-                    <!-- Div -->
-                </div>
+            <div id="ctnprog">
             </div>
 
             <div>
@@ -59,7 +55,7 @@
                     <!-- Bouton -->
                 </button>
             </div>
-        </div>
+        </section>
 
         <footer>
             <p> SAE Atelier-Projet de développement web 1 / 23-27 octobre 2023 </p>

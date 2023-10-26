@@ -4,6 +4,11 @@ body {
 }
 
 body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 20px;
 }
@@ -52,4 +57,36 @@ footer nav {
   margin-left: 2.7%;
 }
 
-/*# sourceMappingURL=style.css.map */
+section {
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
+  width: 94.6%;
+  margin-left: 2.7%;
+}
+section h1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 94.6%;
+  margin-left: 2.7%;
+}
+section h2 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 94.6%;
+  margin-left: 2.7%;
+}
+section div {
+  display: flex;
+  flex-wrap: wrap;
+  width: 94.6%;
+  margin-left: 2.7%;
+}
+section div img {
+  height: 200px;
+  width: 200px;
+}
+
+/*# sourceMappingURL=billets.css.map */

@@ -1,0 +1,13 @@
+$largeurgoutiere: 2.7%;
+$nbcolonne: 12;
+
+@mixin grille($nbc, $lg, $col, $off) {
+  display: flex;
+  flex-wrap: wrap;
+
+  $nbg: $nbc + 1;
+
+  $lc: calc((100% - ($lg * $nbg)) / $nbc);
+  width: $col * $lc + ($col - 1) * $lg;
+  margin-left: $off * $lc + $off + 1 * $lg;
+}

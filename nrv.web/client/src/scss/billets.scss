@@ -1,0 +1,23 @@
+@import "_reset.scss";
+@import "style.scss";
+
+section {
+  display: flex;
+  display: flex;
+  flex-wrap: wrap;
+  @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+  h1 {
+    @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+  }
+
+  h2 {
+    @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+  }
+  div {
+    @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+    img {
+      height: 200px;
+      width: 200px;
+    }
+  }
+}
