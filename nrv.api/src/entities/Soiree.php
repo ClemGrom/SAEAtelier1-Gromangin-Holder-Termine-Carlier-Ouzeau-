@@ -26,7 +26,7 @@ class Soiree extends Model
 
     public function lieu() : BelongsTo
     {
-        return $this->belongsTo(Lieu::class, 'lieu');
+        return $this->belongsTo(Lieu::class, 'id_lieu');
     }
 
     public function spectacles() : HasMany
