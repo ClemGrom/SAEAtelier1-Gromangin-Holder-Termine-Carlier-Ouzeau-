@@ -12,5 +12,6 @@ return function (App $app): void {
     $app->get('/spectacle/{id}[/]', GetSpectacleAPIAction::class)->setName('spectacle');
     $app->get('/soiree/{id}[/]', GetSoireeAPIAction::class)->setName('soiree');
     $app->get('/soirees[/]', GetSoireesAPIAction::class)->setName('soirees');
+    $app->get('/soirees/{sort}/{e}', GetSoireesAPIAction::class)->setName('soirees');
 
 };

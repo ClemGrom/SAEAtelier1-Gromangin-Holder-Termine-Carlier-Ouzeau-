@@ -24,7 +24,7 @@ class GetSoireesAPIAction
     {
 
         try {
-            $soirees = $this->soireeservices->getSoirees();
+            $soirees = $this->soireeservices->getSoirees($args['sort'] ?? null, $args['e'] ?? null);
             $data = ['type' => 'ressource',
                 "soirees" => []];
             foreach ($soirees as $soiree) {
