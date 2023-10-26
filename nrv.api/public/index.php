@@ -27,6 +27,3 @@ $appli = require_once __DIR__ .
 
 $appli->getBasePath();
 $appli->run();
-
-//print the full url of "spectacles" route
-echo $appli->getRouteCollector()->getRouteParser()->urlFor('spectacles');

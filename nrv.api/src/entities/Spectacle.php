@@ -43,12 +43,12 @@ class Spectacle extends Model
             $this->horaire,
             $this->id_soiree,
             $this->theme()->first()->toDTO(),
+            $this->medias()->get()->map(function($media) {
+                return $media->toDTO();
+            })->toArray(),
             $this->artistes()->get()->map(function($artiste) {
                 return $artiste->toDTO();
             })->toArray(),
-            $this->medias()->get()->map(function($media) {
-                return $media->toDTO();
-            })->toArray()
         );
     }
 
