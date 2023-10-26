@@ -21,4 +21,7 @@ return [
         "utilisateur.service" => function (ContainerInterface $container) {
             return new UtilisateurServices();
         },
+        "csrf.service" => function (ContainerInterface $container) {
+            return new CsrfService();
+        },
 ];

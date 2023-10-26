@@ -6,6 +6,7 @@ use nrv\api\actions\GetSoireeAPIAction;
 use nrv\api\actions\GetSpectacleAPIAction;
 use nrv\api\actions\GetSpectaclesAPIAction;
 use nrv\api\actions\PostCreationUtilisateurAPIAction;
+use nrv\api\actions\GetTokenForPostAPIAction;
 use Psr\Container\ContainerInterface;
 
 return [
@@ -20,5 +21,8 @@ return [
         },
         PostCreationUtilisateurAPIAction::class => function (ContainerInterface $container) {
             return new PostCreationUtilisateurAPIAction($container->get("utilisateur.service"));
+        },
+        GetTokenForPostAPIAction::class => function (ContainerInterface $container) {
+            return new GetTokenForPostAPIAction($container->get("csrf.service"));
         },
 ];
