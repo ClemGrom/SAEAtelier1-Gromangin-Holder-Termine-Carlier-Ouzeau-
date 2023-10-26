@@ -13,8 +13,10 @@ class UtilisateurServices
         return Utilisateur::where('uuid', '=', $uuid)->firstOrFail()->toDTO();
     }
 
-    public function createUser(UtilisateurDTO $utilisateurDTO): UtilisateurDTO
+    public function createUser(UtilisateurDTO $utilisateurDTO)
     {
+        //TODO: vérifier que l'utilisateur n'existe pas déjà,
+        // retourner une erreur si c'est le cas en mode "Mauvais format de données"
         $utilisateur = new Utilisateur();
         $utilisateur->uuid = Uuid::uuid4()->toString();
         $utilisateur->nom = $utilisateurDTO->nom;
@@ -23,7 +25,6 @@ class UtilisateurServices
         $utilisateur->password = password_hash($utilisateurDTO->password, PASSWORD_DEFAULT);
         $utilisateur->admin = 0;
         $utilisateur->save();
-        return $utilisateur->toDTO();
     }
 
 }

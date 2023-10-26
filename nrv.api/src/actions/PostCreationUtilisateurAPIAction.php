@@ -40,8 +40,9 @@ class PostCreationUtilisateurAPIAction
             $email = filter_var($post_data['email'], FILTER_SANITIZE_EMAIL);
             $password = filter_var($post_data['password'], FILTER_SANITIZE_STRING);
 
-            $userDto = new UtilisateurDTO($nom, $prenom, $email, 0, null, $password);
-
+            $this->userservices->createUser(
+                new UtilisateurDTO($nom, $prenom, $email, 0, null, $password)
+            );
 
             $code = 200;
         } catch (Exception $e) {
