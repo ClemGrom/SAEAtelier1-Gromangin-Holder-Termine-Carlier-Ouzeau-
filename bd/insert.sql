@@ -15,12 +15,12 @@ VALUES ('1', 'Mozart', 'Mozart', 'Wolfgang Amadeus'),
        ('7', 'Michael Jackson', 'Jackson', 'Michael'),
        ('8', 'Louis Armstrong', 'Armstrong', 'Louis');
 
-INSERT INTO `lieu` (`nom`, `adresse`, `nb_place_assises`, `nb_place_debout`)
-VALUES ('Salle de concert A', '123 Rue de la Musique, Nancy', 500, 1000),
-       ('Club de musique B', '456 Rue des Artistes, Nancy', 200, 300),
-       ('Salle de concert C', '789 Rue des Musiciens, Nancy', 1000, 2000),
-       ('Salle de concert D', '101112 Rue des Chanteurs, Nancy', 100, 200),
-       ('Salle de concert E', '131415 Rue des Chanteurs, Nancy', 100, 200);
+INSERT INTO `lieu` (`id`, `nom`, `adresse`, `nb_place_assises`, `nb_place_debout`)
+VALUES ('1', 'Salle de concert A', '123 Rue de la Musique, Nancy', 500, 1000),
+       ('2', 'Club de musique B', '456 Rue des Artistes, Nancy', 200, 300),
+       ('3', 'Salle de concert C', '789 Rue des Musiciens, Nancy', 1000, 2000),
+       ('4', 'Salle de concert D', '101112 Rue des Chanteurs, Nancy', 100, 200),
+       ('5', 'Salle de concert E', '131415 Rue des Chanteurs, Nancy', 100, 200);
 
 INSERT INTO `theme` (`id`, `nom`)
 VALUES ('1', 'Classique'),
@@ -55,26 +55,26 @@ VALUES ('1', 'Disco Night', '4', '2022-01-01', '1', '1'),
        ('3', 'Hip Hop Love', '8', '2022-01-03', '3', '3'),
        ('4', 'Jazz Touch', '3', '2022-01-04', '4', '4'),
        ('5', 'Les classiques des années 80', '1', '2022-01-05', '5', '5'),
-       ('6', 'Electro passion', '6', '2022-01-06', '6', '2'),
-       ('7', 'Reggae Night', '7', '2022-01-07', '7', '3'),
-       ('8', 'Funky Franky', '10', '2022-01-08', '8', '5'),
-       ('9', 'La musique dans la peau', '9', '2022-01-09', '9', '4'),
-       ('10', 'Pipolapi', '5', '2022-01-10', '10', '1');
+       ('6', 'Electro passion', '6', '2022-01-06', '4', '2'),
+       ('7', 'Reggae Night', '7', '2022-01-07', '3', '3'),
+       ('8', 'Funky Franky', '10', '2022-01-08', '2', '5'),
+       ('9', 'La musique dans la peau', '9', '2022-01-09', '1', '4'),
+       ('10', 'Pipolapi', '5', '2022-01-10', '5', '1');
 
 INSERT INTO `reservation` (`uuid`, `id_commande`, `id_soiree`, `type_tarif`, `nb_places`)
-VALUES ('18707fc1-5927-4c3f-af2e-bb51bb9dde53', '1', '1', 'normal', '2');
+VALUES ('18707fc1-5927-4c3f-af2e-bb51bb9dde53', '99b58573-cb80-4d96-9900-566ba9c4853f', '1', '1', '2');
 
 INSERT INTO `spectacle` (`id`, `titre`, `description`, `id_soiree`, `id_theme`, `horaire`)
-VALUES ('1', 'Spectacle 1', 'Description du spectacle 1', '1', '1', '20h00'),
-       ('2', 'Spectacle 2', 'Description du spectacle 2', '2', '2', '21h00'),
-       ('3', 'Spectacle 3', 'Description du spectacle 3', '3', '3', '22h00'),
-       ('4', 'Spectacle 4', 'Description du spectacle 4', '4', '4', '23h00'),
-       ('5', 'Spectacle 5', 'Description du spectacle 5', '5', '5', '00h00'),
-       ('6', 'Spectacle 6', 'Description du spectacle 6', '6', '6', '01h00'),
-       ('7', 'Spectacle 7', 'Description du spectacle 7', '7', '7', '02h00'),
-       ('8', 'Spectacle 8', 'Description du spectacle 8', '8', '8', '03h00'),
-       ('9', 'Spectacle 9', 'Description du spectacle 9', '9', '9', '04h00'),
-       ('10', 'Spectacle 10', 'Description du spectacle 10', '10', '10', '05h00');
+VALUES ('1', 'Spectacle 1', 'Description du spectacle 1', '1', '1', '2022-01-01 20:00'),
+       ('2', 'Spectacle 2', 'Description du spectacle 2', '2', '2', '2022-01-02 21:00'),
+       ('3', 'Spectacle 3', 'Description du spectacle 3', '3', '3', '2022-01-03 22:00'),
+       ('4', 'Spectacle 4', 'Description du spectacle 4', '4', '4', '2022-01-04 23:00'),
+       ('5', 'Spectacle 5', 'Description du spectacle 5', '5', '5', '2022-01-05 00:00'),
+       ('6', 'Spectacle 6', 'Description du spectacle 6', '6', '6', '2022-01-06 01:00'),
+       ('7', 'Spectacle 7', 'Description du spectacle 7', '7', '7', '2022-01-07 02:00'),
+       ('8', 'Spectacle 8', 'Description du spectacle 8', '8', '8', '2022-01-08 03:00'),
+       ('9', 'Spectacle 9', 'Description du spectacle 9', '9', '9', '2022-01-09 04:00'),
+       ('10', 'Spectacle 10', 'Description du spectacle 10', '10', '10', ' 2022-01-10 05:00');
 
 INSERT INTO `participation` (`id_artiste`, `id_spectacle`)
 VALUES (1, 1),
@@ -85,5 +85,5 @@ VALUES (1, 1),
        (6, 6),
        (7, 7),
        (8, 8),
-       (9, 9),
-       (10, 10);
+       (1, 9),
+       (2, 10);
