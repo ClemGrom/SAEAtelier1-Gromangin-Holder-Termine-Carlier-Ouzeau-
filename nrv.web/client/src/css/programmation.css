@@ -72,13 +72,52 @@ h1 {
   font-size: 1.8em;
 }
 
-div {
-  width: 94.6%;
-  margin-left: 2.7%;
-}
 div img {
-  height: 200px;
-  width: 200px;
+  height: 250px;
+  width: auto;
+  display: block;
+  position: relative;
+}
+
+#ctnprog {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 2em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.programme-item {
+  align-items: center;
+  border-radius: 10px;
+  position: relative;
+}
+.programme-item img {
+  display: block;
+  border-radius: 10px;
+}
+.programme-item h3, .programme-item p {
+  position: absolute;
+  border: #32BFE0 solid 1px;
+  background-color: #32BFE0;
+  padding: 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 1em;
+  font-weight: bold;
+}
+.programme-item h3 {
+  top: -5%;
+}
+.programme-item h3 + p {
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+}
+.programme-item p + p {
+  top: 2%;
+  right: 11%;
+  transform: translate(-50%, -50%);
 }
 
 /*# sourceMappingURL=programmation.css.map */

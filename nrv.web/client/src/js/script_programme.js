@@ -252,6 +252,7 @@ var ctnprog = document.getElementById('ctnprog')
 
 for (let i = 0; i < Object.keys(jsonprog).length; i++) {
     let button = document.createElement('button');
+    button.classList.add('programme-item');
     ctnprog.appendChild(button);
 
     let img = document.createElement('img');
@@ -264,7 +265,7 @@ for (let i = 0; i < Object.keys(jsonprog).length; i++) {
     button.appendChild(title);
 
     let desc = document.createElement('p');
-    desc.innerHTML = jsonprog[i]['desc'];   
+    desc.innerHTML = jsonprog[i]['desc'];
     button.appendChild(desc);
 
     let date = document.createElement('p');
