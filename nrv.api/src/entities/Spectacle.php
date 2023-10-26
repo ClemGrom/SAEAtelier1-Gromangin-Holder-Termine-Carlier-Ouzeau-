@@ -27,14 +27,12 @@ class Spectacle extends Model
 
     public function artistes() : BelongsToMany
     {
-        return $this->belongsToMany(Artiste::class, 'artiste', 'id_spectacle', 'id_artiste')
-            ->withPivot("participation");
+        return $this->belongsToMany(Artiste::class, 'participation', 'id_spectacle', 'id_artiste');
     }
 
     public function medias() : BelongsToMany
     {
-        return $this->belongsToMany(Media::class, 'media', 'id_spectacle', 'id_media')
-            ->withPivot("illustration_spectacle");
+        return $this->belongsToMany(Media::class, 'illustration_spectacle', 'id_spectacle', 'id_media');
     }
 
     public function toDTO() : SpectacleDTO {
@@ -45,12 +43,12 @@ class Spectacle extends Model
             $this->horaire,
             $this->id_soiree,
             $this->theme()->first()->toDTO(),
+            $this->medias()->get()->map(function($media) {
+                return $media->toDTO();
+            })->toArray(),
             $this->artistes()->get()->map(function($artiste) {
                 return $artiste->toDTO();
             })->toArray(),
-            $this->medias()->get()->map(function($media) {
-                return $media->toDTO();
-            })->toArray()
         );
     }
 

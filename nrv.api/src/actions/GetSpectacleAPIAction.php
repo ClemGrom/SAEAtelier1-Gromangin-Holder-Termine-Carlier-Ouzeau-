@@ -13,7 +13,7 @@ class GetSpectacleAPIAction
 {
 
 
-    private SpectacleServices $speccservices;
+    private SpectacleServices $specservices;
 
     public function __construct(SpectacleServices $specser)
     {
@@ -26,7 +26,7 @@ class GetSpectacleAPIAction
         if (is_null($id)) throw new HttpBadRequestException($rq, 'id spectacle manquant');
 
         try {
-            $spectacle = $this->specservices->get('spectacle.service')->getSpectacle($id);
+            $spectacle = $this->specservices->getSpectacle($id);
             $data = ['type' => 'ressource',
                 "spectacle" => $spectacle];
             $code = 200;

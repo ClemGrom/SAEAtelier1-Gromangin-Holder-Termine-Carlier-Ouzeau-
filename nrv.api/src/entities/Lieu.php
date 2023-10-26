@@ -15,25 +15,25 @@ class Lieu extends Model
 
     protected $fillable = ["nom", "adresse", "nb_place_assises", "nb_place_debout"];
 
-    public function soirees() : HasMany
+    public function soirees(): HasMany
     {
         return $this->hasMany(Soiree::class, 'id');
     }
 
-    public function medias() : BelongsToMany
+    public function medias(): BelongsToMany
     {
-        return $this->belongsToMany(Media::class, 'lieu', 'id_lieu', 'id_media')
-            ->withPivot("illustration_lieu");
+        return $this->belongsToMany(Media::class, 'illustration_lieu', 'id_lieu', 'id_media');
     }
 
-    public function toDTO() : LieuDTO {
+    public function toDTO(): LieuDTO
+    {
         return new LieuDTO(
             $this->id,
             $this->nom,
             $this->adresse,
             $this->nb_place_assises,
             $this->nb_place_debout,
-            $this->medias()->get()->map(function($media) {
+            $this->medias()->get()->map(function ($media) {
                 return $media->toDTO();
             })->toArray(),
             $this->soirees()->pluck("id")->toArray()
