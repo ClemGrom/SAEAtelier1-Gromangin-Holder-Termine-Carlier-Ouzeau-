@@ -12,6 +12,14 @@ class SoireeServices
         return Soiree::where('id', '=', $id)->firstOrFail()->toDTO();
     }
 
-    
+    public function getSoirees(): array
+    {
+        $soirees = Soiree::all();
+        $soireesDTO = [];
+        foreach ($soirees as $soiree) {
+            $soireesDTO[] = $soiree->toDTO();
+        }
+        return $soireesDTO;
+    }
 
 }
