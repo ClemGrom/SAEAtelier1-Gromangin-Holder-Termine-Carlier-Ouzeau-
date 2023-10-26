@@ -12,11 +12,11 @@ class Soiree extends Model
     protected $table = "soiree";
     protected $primaryKey = "id";
     public $incrementing = true;
-    protected $fillable = ["nom", "theme", "date", "lieu", "id_tarif"];
+    protected $fillable = ["nom", "id_theme", "date", "lieu", "id_tarif"];
 
     public function theme() : BelongsTo
     {
-        return $this->belongsTo(Theme::class, 'theme');
+        return $this->belongsTo(Theme::class, 'id_theme');
     }
 
     public function tarif() : BelongsTo
