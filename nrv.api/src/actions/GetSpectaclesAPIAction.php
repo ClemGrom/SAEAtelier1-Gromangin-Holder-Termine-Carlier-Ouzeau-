@@ -24,7 +24,7 @@ class GetSpectaclesAPIAction
     {
 
         try {
-            $spectacles = $this->specservices->get('spectacle.service')->getSpectacles();
+            $spectacles = $this->specservices->getSpectacles();
             $data = ['type' => 'ressource',
                 "spectacles" => []];
             foreach ($spectacles as $spectacle) {

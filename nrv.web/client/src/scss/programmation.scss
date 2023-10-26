@@ -1,0 +1,13 @@
+@import '_reset.scss';
+@import 'style.scss';
+
+h1{
+    font-size:1.8em;
+}
+div {
+    @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+    img {
+      height: 200px;
+      width: 200px;
+    }
+}

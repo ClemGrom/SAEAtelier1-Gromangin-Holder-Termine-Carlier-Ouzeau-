@@ -1,0 +1,10 @@
+$nombre-colonnes: 12;
+$largeur-gouttieres: 2.7%;
+
+@mixin grille($nombre-colonnes, $largeurgoutiere, $largeur-colonne, $offset) {
+  $nombre-gouttieres: $nombre-colonnes + 1;
+  $largeur-colonne: calc((100% - ($nombre-gouttieres * $largeur-gouttieres)) / $nombre-colonnes);
+  
+  width: ($nombre-colonnes * $largeur-colonne) + (($nombre-colonnes - 1) * $largeur-gouttieres);
+  margin-left: ($offset * $largeur-colonne) + (($offset + 1) * $largeur-gouttieres);
+}

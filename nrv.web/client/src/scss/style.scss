@@ -1,2 +1,62 @@
-@import 'reset.scss';
+@import "_reset.scss";
+@import "_mixin.scss";
 
+$nbcolonne:12;
+$largeurgoutiere:0%;
+
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding: 20px;
+}
+
+button, button:visited, button:active{
+  background-color: transparent;
+  border: none;
+  text-decoration:none;
+}
+#logo{
+  width:100px;
+  height:auto;
+}
+  
+h1 {
+  background-color: #F7596F;
+  font-size: 2.5em;
+}
+
+header {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:10px;
+  @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+  background-color: #F7596F;
+
+  img {
+    @include grille($nbcolonne, $largeurgoutiere, 8, 0);
+  }
+
+  nav {
+    display:flex;
+    justify-content: flex-end;
+    @include grille($nbcolonne, $largeurgoutiere, 4, 0);
+    button:first-child{
+      background-color: transparent;
+      border: none;
+      margin: 0 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      color: rgb(102, 102, 210);
+    }
+  }
+}
+
+footer {
+  @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+  background-color: #32BFE0;
+  text-align: center;
+
+  nav {
+    @include grille($nbcolonne, $largeurgoutiere, 6, 0);
+  }
+}
