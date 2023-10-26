@@ -3,6 +3,7 @@
 namespace nrv\api\action;
 
 use Exception;
+use nrv\api\dto\UtilisateurDTO;
 use nrv\api\renderer\JSONRenderer;
 use nrv\api\services\CsrfService;
 use nrv\api\services\UtilisateurServices;
@@ -33,11 +34,17 @@ class PostCreationUtilisateurAPIAction
         }
 
         try {
-            //TODO: utilisation service utilisateur pour la création de compte
-            //TODO: retour de l'api pour confirmer la création de compte
+            //Validate data: nom prenom email password
+            $nom = filter_var($post_data['nom'], FILTER_SANITIZE_STRING);
+            $prenom = filter_var($post_data['prenom'], FILTER_SANITIZE_STRING);
+            $email = filter_var($post_data['email'], FILTER_SANITIZE_EMAIL);
+            $password = filter_var($post_data['password'], FILTER_SANITIZE_STRING);
+
+            $userDto = new UtilisateurDTO($nom, $prenom, $email, 0, null, $password);
+
+
             $code = 200;
         } catch (Exception $e) {
-            $token = $this->csrfservice::generate();
             $data = [
                 "message" => "Données d'inscription invalides",
                 "exception" => [[

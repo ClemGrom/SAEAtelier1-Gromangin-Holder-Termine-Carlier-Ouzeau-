@@ -3,6 +3,7 @@
 namespace nrv\api\config\containers;
 
 use nrv\api\services\CommandeServices;
+use nrv\api\services\CsrfService;
 use nrv\api\services\SoireeServices;
 use nrv\api\services\SpectacleServices;
 use nrv\api\services\UtilisateurServices;

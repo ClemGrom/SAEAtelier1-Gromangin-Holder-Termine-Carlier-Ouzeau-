@@ -12,7 +12,7 @@ class UtilisateurDTO extends DTO
     public array $commandes;
     public string $password;//Doit être utilisé que pour le transit |ACTION->SERVICE|(ex creation user) ET !SURTOUT! PAS |SERVICE->ACTION|(ex: listage user, mdp pas important + doit être null)
 
-    public function __construct(string $uuid, string $nom, string $prenom, string $email, bool $admin, array $commandes, string $password=null)
+    public function __construct(string $nom, string $prenom, string $email, bool $admin = null, array $commandes = null,string $uuid = null, string $password=null)
     {
         $this->uuid = $uuid;
         $this->nom = $nom;

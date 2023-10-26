@@ -20,14 +20,14 @@ class Utilisateur extends Model
 
     public function toDTO() : UtilisateurDTO {
         return new UtilisateurDTO(
-            $this->uuid,
             $this->nom,
             $this->prenom,
             $this->email,
             $this->admin,
             $this->commandes()->get()->map(function($commande) {
                 return $commande->toDTO();
-            })->toArray()
+            })->toArray(),
+            $this->uuid,
         );
     }
 

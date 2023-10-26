@@ -2,10 +2,10 @@
 
 namespace nrv\api\config\containers;
 
+use nrv\api\action\PostCreationUtilisateurAPIAction;
 use nrv\api\actions\GetSoireeAPIAction;
 use nrv\api\actions\GetSpectacleAPIAction;
 use nrv\api\actions\GetSpectaclesAPIAction;
-use nrv\api\actions\PostCreationUtilisateurAPIAction;
 use nrv\api\actions\GetTokenForPostAPIAction;
 use Psr\Container\ContainerInterface;
 
@@ -20,7 +20,9 @@ return [
             return new GetSpectaclesAPIAction($container->get("spectacle.service"));
         },
         PostCreationUtilisateurAPIAction::class => function (ContainerInterface $container) {
-            return new PostCreationUtilisateurAPIAction($container->get("utilisateur.service"));
+            return new PostCreationUtilisateurAPIAction(
+                $container->get("utilisateur.service"), $container->get("csrf.service")
+            );
         },
         GetTokenForPostAPIAction::class => function (ContainerInterface $container) {
             return new GetTokenForPostAPIAction($container->get("csrf.service"));
