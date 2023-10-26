@@ -4,6 +4,7 @@
 namespace nrv\api\services;
 
 use nrv\api\entities\Artiste;
+use nrv\api\dto\ArtisteDTO;
 
 class ArtisteServices
 {
@@ -12,13 +13,4 @@ class ArtisteServices
         return Artiste::where('id', '=', $id)->firstOrFail()->toDTO();
     }
 
-    public function getArtistes(): array
-    {
-        $artistes = Artiste::all();
-        $artistesDTO = [];
-        foreach ($artistes as $artiste) {
-            $artistesDTO[] = $artiste->toDTO();
-        }
-        return $artistesDTO;
-    }
 }

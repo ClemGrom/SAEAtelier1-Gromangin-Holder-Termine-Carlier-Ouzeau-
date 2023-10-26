@@ -22,7 +22,7 @@ class Theme extends Model
 
     public function soirees() : HasMany
     {
-        return $this->hasMany(Soiree::class, 'theme');
+        return $this->hasMany(Soiree::class, 'id_theme');
     }
 
     public function toDTO() : ThemeDTO {
