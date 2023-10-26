@@ -17,7 +17,7 @@ class Lieu extends Model
 
     public function soirees(): HasMany
     {
-        return $this->hasMany(Soiree::class, 'id');
+        return $this->hasMany(Soiree::class, 'id_lieu');
     }
 
     public function medias(): BelongsToMany
