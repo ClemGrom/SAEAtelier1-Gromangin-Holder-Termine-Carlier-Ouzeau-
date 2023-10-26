@@ -1,11 +1,11 @@
-@import "_reset.scss";
 @import "style.scss";
 
+$nbcolonne:12;
+$largeurgoutiere:0%;
+
 section {
-  display: flex;
-  display: flex;
-  flex-wrap: wrap;
-  @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+  @extend .row;
+  @include grille($nbcolonne, $largeurgoutiere, 10, 0);
   h1 {
     @include grille($nbcolonne, $largeurgoutiere, 12, 0);
   }

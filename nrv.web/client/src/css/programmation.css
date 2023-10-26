@@ -3,6 +3,11 @@ body {
   padding: 0;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -73,4 +78,13 @@ footer nav {
   margin-left: 2.7%;
 }
 
-/*# sourceMappingURL=style.css.map */
+div {
+  width: 94.6%;
+  margin-left: 2.7%;
+}
+div img {
+  height: 200px;
+  width: 200px;
+}
+
+/*# sourceMappingURL=programmation.css.map */

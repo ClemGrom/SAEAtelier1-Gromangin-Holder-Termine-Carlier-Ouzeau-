@@ -1,13 +1,20 @@
-$largeurgoutiere: 2.7%;
-$nbcolonne: 12;
+$nombre-colonnes: 12;
+$largeur-gouttieres: 2.7%;
 
-@mixin grille($nbc, $lg, $col, $off) {
-  display: flex;
-  flex-wrap: wrap;
+.row{
+  display:flex;
+  flex-wrap:wrap;
+}
 
-  $nbg: $nbc + 1;
+.col{
+  margin-left: $largeur-gouttieres;
+  padding-bottom:20px;
+}
 
-  $lc: calc((100% - ($lg * $nbg)) / $nbc);
-  width: $col * $lc + ($col - 1) * $lg;
-  margin-left: $off * $lc + $off + 1 * $lg;
+@mixin grille($nombre-colonnes, $largeurgoutiere, $largeur-colonne, $offset) {
+  $nombre-gouttieres: $nombre-colonnes + 1;
+  $largeur-colonne: calc((100% - ($nombre-gouttieres * $largeur-gouttieres)) / $nombre-colonnes);
+  
+  width: ($nombre-colonnes * $largeur-colonne) + (($nombre-colonnes - 1) * $largeur-gouttieres);
+  margin-left: ($offset * $largeur-colonne) + (($offset + 1) * $largeur-gouttieres);
 }

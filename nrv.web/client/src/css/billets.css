@@ -3,9 +3,14 @@ body {
   padding: 0;
 }
 
-body {
-  margin: 0;
-  padding: 0;
+.row, section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  margin-left: 2.7%;
+  padding-bottom: 20px;
 }
 
 body {
@@ -13,74 +18,74 @@ body {
   padding: 20px;
 }
 
+button, button:visited, button:active {
+  background-color: transparent;
+  border: none;
+  text-decoration: none;
+}
+
+#logo {
+  width: 100px;
+  height: auto;
+}
+
 h1 {
   background-color: pink;
-  font-size: 5em;
+  font-size: 2.5em;
 }
 
 header {
   display: flex;
-  flex-wrap: wrap;
-  display: flex;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
   width: 94.6%;
   margin-left: 2.7%;
   background-color: pink;
 }
 header img {
-  display: flex;
-  flex-wrap: wrap;
-  width: 62.1666666667%;
+  width: 94.6%;
   margin-left: 2.7%;
 }
 header nav {
   display: flex;
-  flex-wrap: wrap;
-  width: 29.7333333333%;
+  justify-content: flex-end;
+  width: 94.6%;
   margin-left: 2.7%;
-  background-color: pink;
-  justify-content: end;
+}
+header nav button:first-child {
+  background-color: transparent;
+  border: none;
+  margin: 0 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: rgb(102, 102, 210);
 }
 
 footer {
-  display: flex;
-  flex-wrap: wrap;
   width: 94.6%;
   margin-left: 2.7%;
   background-color: powderblue;
   text-align: center;
 }
 footer nav {
-  display: flex;
-  flex-wrap: wrap;
-  width: 45.95%;
+  width: 94.6%;
   margin-left: 2.7%;
 }
 
 section {
-  display: flex;
-  display: flex;
-  flex-wrap: wrap;
-  display: flex;
-  flex-wrap: wrap;
   width: 94.6%;
   margin-left: 2.7%;
 }
 section h1 {
-  display: flex;
-  flex-wrap: wrap;
   width: 94.6%;
   margin-left: 2.7%;
 }
 section h2 {
-  display: flex;
-  flex-wrap: wrap;
   width: 94.6%;
   margin-left: 2.7%;
 }
 section div {
-  display: flex;
-  flex-wrap: wrap;
   width: 94.6%;
   margin-left: 2.7%;
 }
