@@ -16,14 +16,12 @@ class Media extends Model
 
     public function spectacles() : BelongsToMany
     {
-        return $this->belongsToMany(Spectacle::class, 'spectacle', 'id_media', 'id_spectacle')
-            ->withPivot("illustration_spectacle");
+        return $this->belongsToMany(Spectacle::class, 'illustration_spectacle', 'id_media', 'id_spectacle');
     }
 
     public function lieux() : BelongsToMany
     {
-        return $this->belongsToMany(Lieu::class, 'lieu', 'id_media', 'id_lieu')
-            ->withPivot("illustration_lieu");
+        return $this->belongsToMany(Lieu::class, 'illustration_lieu', 'id_media', 'id_lieu');
     }
 
     public function toDTO() : MediaDTO {

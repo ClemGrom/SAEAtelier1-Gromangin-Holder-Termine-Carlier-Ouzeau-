@@ -27,14 +27,12 @@ class Spectacle extends Model
 
     public function artistes() : BelongsToMany
     {
-        return $this->belongsToMany(Artiste::class, 'artiste', 'id_spectacle', 'id_artiste')
-            ->withPivot("participation");
+        return $this->belongsToMany(Artiste::class, 'participation', 'id_spectacle', 'id_artiste');
     }
 
     public function medias() : BelongsToMany
     {
-        return $this->belongsToMany(Media::class, 'media', 'id_spectacle', 'id_media')
-            ->withPivot("illustration_spectacle");
+        return $this->belongsToMany(Media::class, 'illustration_spectacle', 'id_spectacle', 'id_media');
     }
 
     public function toDTO() : SpectacleDTO {

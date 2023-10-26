@@ -2,7 +2,6 @@
 
 namespace nrv\api\config;
 
-use DI\Bridge\Slim\Bridge;
 use Slim\Factory\AppFactory;
 
 //importation settings conteneurs dans variable
@@ -17,7 +16,7 @@ $builder->addDefinitions($actions);
 $container = $builder->build();
 
 //Création app slim depuis container
-$app = Bridge::create($container);
+$app = AppFactory::createFromContainer($container);
 
 //Ajout middleware
 $app->addBodyParsingMiddleware();
