@@ -20,6 +20,11 @@ class Commande extends Model
         return $this->belongsTo(Utilisateur::class, 'id_utilisateur');
     }
 
+    public function commande_actuelle(): hasMany
+    {
+        return $this->hasMany(Utilisateur::class, 'commande_actuelle');
+    }
+
     public function reservations() : HasMany
     {
         return $this->hasMany(Reservation::class, 'id_commande');
