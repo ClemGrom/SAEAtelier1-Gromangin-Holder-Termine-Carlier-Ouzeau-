@@ -6,10 +6,11 @@ function load(url) {
         // On retourne les données
         .then(data => {
             return data
-        })
+        }).catch(url => console.log(url))
         // On affiche l'erreur dans la console en cas d'erreur
         .catch(error => console.log(error))
 }
+
 
 // Export
 export {load}
