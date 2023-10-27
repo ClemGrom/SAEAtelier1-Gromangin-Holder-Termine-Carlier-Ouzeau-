@@ -16,7 +16,7 @@ services:
     hostname: interface-backend
     image: 'canals/php:latest'
     ports:
-      - "8021:80"
+      - "18021:80"
     volumes:
       - ../nrv.api/public:/var/www/html
       - ../nrv.api/src:/var/www/src
@@ -44,7 +44,7 @@ services:
     volumes:
       - ./databases:/var/lib/mysql
     ports:
-      - "8001:3306"
+      - "18001:3306"
     networks:
       - nrv.db.1
       - nrv.db.2
@@ -55,7 +55,7 @@ services:
     environment:
       - PMA_HOST=mysql-db
     ports:
-      - "8011:80"
+      - "18011:80"
     networks:
       - nrv.db.2
     depends_on:
@@ -65,7 +65,7 @@ services:
     hostname: nginx-client
     image: nginx
     ports:
-      - "8121:80"
+      - "18121:80"
     volumes:
       - ../nrv.web/client/src/html:/usr/share/nginx/html
       - ../nrv.web/client/src/css:/usr/share/nginx/html/css
@@ -82,7 +82,7 @@ services:
     hostname: nginx-backoffice
     image: nginx
     ports:
-      - "8221:80"
+      - "18221:80"
     volumes:
       - ../nrv.web/backoffice:/usr/share/nginx/html
     networks:
