@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur`
     `email`    varchar(255) NOT NULL,
     `password` BINARY(60)   NOT NULL,
     `admin`    boolean      NOT NULL,
+    `commande_actuelle` varchar(255) DEFAULT NULL,
     PRIMARY KEY (`uuid`)
 );
 
