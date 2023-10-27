@@ -39,6 +39,7 @@ class PostCreationUtilisateurAPIAction
             $prenom = filter_var($post_data['prenom'], FILTER_SANITIZE_STRING);
             $email = filter_var($post_data['email'], FILTER_SANITIZE_EMAIL);
             $password = filter_var($post_data['password'], FILTER_SANITIZE_STRING);
+            if ($post_data['passwordRepeat'] != $password) throw new Exception("Les mots de passe ne correspondent pas");
 
             $this->userservices->createUser(
                 new UtilisateurDTO($nom, $prenom, $email, 0, null, $password)
