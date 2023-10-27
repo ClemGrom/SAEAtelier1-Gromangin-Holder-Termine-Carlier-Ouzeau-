@@ -72,11 +72,25 @@ h1 {
   font-size: 1.8em;
 }
 
-div {
+section {
+  display: flex;
+  flex-wrap: wrap;
   width: 94.6%;
   margin-left: 2.7%;
 }
-div img {
+section h1 {
+  width: 94.6%;
+  margin-left: 2.7%;
+}
+section nav {
+  width: 94.6%;
+  margin-left: 2.7%;
+}
+section .ctnprog div {
+  width: 94.6%;
+  margin-left: 2.7%;
+}
+section img {
   height: 200px;
   width: 200px;
 }

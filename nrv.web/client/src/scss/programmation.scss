@@ -1,13 +1,26 @@
-@import '_reset.scss';
-@import 'style.scss';
+@import "_reset.scss";
+@import "style.scss";
 
-h1{
-    font-size:1.8em;
+h1 {
+  font-size: 1.8em;
 }
-div {
+
+section {
+  display: flex;
+  flex-wrap: wrap;
+  @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+  h1 {
     @include grille($nbcolonne, $largeurgoutiere, 12, 0);
-    img {
-      height: 200px;
-      width: 200px;
-    }
+  }
+  nav {
+    @include grille($nbcolonne, $largeurgoutiere, 12, 0);
+  }
+  .ctnprog div{
+    @include grille($nbcolonne, $largeurgoutiere, 3, 0);
+
+  }
+  img {
+    height: 200px;
+    width: 200px;
+  }
 }
