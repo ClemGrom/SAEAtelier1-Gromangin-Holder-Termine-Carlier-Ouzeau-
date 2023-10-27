@@ -96,7 +96,6 @@ var flstyle = document.getElementById('flstyle');
 
 // lieu
 for (let i = 0; i < Object.keys(jsonlieu).length; i++) {
-    console.log(i);
     let select = document.createElement('option');
     select.innerHTML = jsonlieu[i]["nom"];
     select.value = jsonlieu[i]["id"];
@@ -105,7 +104,6 @@ for (let i = 0; i < Object.keys(jsonlieu).length; i++) {
 
 // artiste
 for (let i = 0; i < Object.keys(jsonartiste).length; i++) {
-    console.log(i);
     let select = document.createElement('option');
     select.innerHTML = jsonartiste[i]["nom"];
     select.value = jsonartiste[i]["id"];
@@ -114,7 +112,6 @@ for (let i = 0; i < Object.keys(jsonartiste).length; i++) {
 
 // style
 for (let i = 0; i < Object.keys(jsonstyle).length; i++) {
-    console.log(i);
     let select = document.createElement('option');
     select.innerHTML = jsonstyle[i]["nom"];
     select.value = jsonstyle[i]["id"];
@@ -123,7 +120,6 @@ for (let i = 0; i < Object.keys(jsonstyle).length; i++) {
 
 // date
 for (let i = 0; i < Object.keys(jsondate).length; i++) {
-    console.log(i);
     let select = document.createElement('option');
     select.innerHTML = jsondate[i]["date"];
     select.value = jsondate[i]["id"];
