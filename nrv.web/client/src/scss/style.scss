@@ -31,6 +31,10 @@ header {
   padding:10px;
   @include grille($nbcolonne, $largeurgoutiere, 12, 0);
   background-color: #F7596F;
+  a{
+    text-decoration:none;
+    color:  white;
+  }
 
   img {
     @include grille($nbcolonne, $largeurgoutiere, 8, 0);

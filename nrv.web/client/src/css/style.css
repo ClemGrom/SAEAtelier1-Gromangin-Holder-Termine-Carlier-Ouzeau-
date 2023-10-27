@@ -33,6 +33,10 @@ header {
   margin-left: 2.7%;
   background-color: #F7596F;
 }
+header a {
+  text-decoration: none;
+  color: white;
+}
 header img {
   width: 94.6%;
   margin-left: 2.7%;

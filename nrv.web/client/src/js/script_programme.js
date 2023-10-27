@@ -251,8 +251,7 @@ var jsonprog = {
 var ctnprog = document.getElementById('ctnprog')
 
 for (let i = 0; i < Object.keys(jsonprog).length; i++) {
-    let button = document.createElement('button');
-    button.classList.add('programme-item');
+    let button = document.createElement('a');
     ctnprog.appendChild(button);
 
     let img = document.createElement('img');
