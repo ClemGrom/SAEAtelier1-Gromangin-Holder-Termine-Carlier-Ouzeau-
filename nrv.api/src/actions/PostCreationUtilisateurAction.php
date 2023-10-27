@@ -10,7 +10,7 @@ use nrv\api\services\UtilisateurServices;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class PostCreationUtilisateurAPIAction
+class PostCreationUtilisateurAction
 {
     private UtilisateurServices $userservices;
     private CsrfService $csrfservice;
@@ -44,6 +44,9 @@ class PostCreationUtilisateurAPIAction
             $this->userservices->createUser(
                 new UtilisateurDTO($nom, $prenom, $email, 0, null, $password)
             );
+            $data = [
+                "message" => "Utilisateur créé"
+            ];
 
             $code = 200;
         } catch (Exception $e) {
