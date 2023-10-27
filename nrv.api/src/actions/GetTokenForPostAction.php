@@ -7,7 +7,7 @@ use nrv\api\services\CsrfService;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 
-class GetTokenForPostAPIAction
+class GetTokenForPostAction
 {
     private CsrfService $csrfService;
 
