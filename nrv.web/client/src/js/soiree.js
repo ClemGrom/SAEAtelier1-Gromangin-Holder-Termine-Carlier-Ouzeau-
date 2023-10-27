@@ -13,4 +13,5 @@ function getSoirees(trie, id) {
     }
 }
 
+
 export { getSoireeById, getSoirees };
