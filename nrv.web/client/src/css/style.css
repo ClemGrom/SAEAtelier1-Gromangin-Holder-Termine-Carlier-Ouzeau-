@@ -20,8 +20,10 @@ button, button:visited, button:active {
 }
 
 h1 {
-  background-color: #F7596F;
-  font-size: 2.5em;
+  color: red;
+  font-size: 3em;
+  background-color: transparent;
+  padding-left: 5%;
 }
 
 header {
