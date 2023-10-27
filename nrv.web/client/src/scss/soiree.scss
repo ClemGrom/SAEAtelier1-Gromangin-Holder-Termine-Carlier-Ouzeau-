@@ -1,3 +1,82 @@
 @import '_reset.scss';
 @import "style.scss";
 
+h2 ~ div {
+  margin-left: 5%;
+}
+
+#hsoiree {
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+#ctndate, #btnbuy {
+    margin-left: 5%;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+  
+#ctndate {
+    float: left;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+#btnbuy {
+    float: right;
+    padding-top:2.5%;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 10px;
+}
+  
+  #ctnsoiree {
+    width: 100%;
+    overflow: hidden;
+    padding-top: 5%;
+    div {
+      margin-bottom: 20px;
+      margin: 5px;
+      width: calc(50% - 10px);
+      float: left;
+    }
+  
+    img {
+      float: right;
+      width: 400px;
+      height: auto;
+      padding-right: 20%;
+      padding-bottom:10%;
+    }
+  }
+  
+@media screen and (max-width: 1060px){
+    #ctnsoiree {
+        img {
+            width: 70%;
+            height: auto;
+        }
+    }
+}
+
+@media screen and (max-width:850px){
+    #btnbuy{
+        float:left;
+    }
+    #ctnsoiree{
+        div{
+            width:100%;
+        }
+        img{
+            width: 350px;
+            height: auto;
+            padding-right: 0;
+            float:left;
+        }
+    }
+}
