@@ -1,14 +1,9 @@
 version: "3"
 
 networks:
-  nrv.db.1:
+  nrv.net:
     driver: bridge
-  nrv.db.2:
-    driver: bridge
-  nrv.net.1:
-    driver: bridge
-  nrv.net.2:
-    driver: bridge
+
 
 services:
 
@@ -22,9 +17,8 @@ services:
       - ../nrv.api/src:/var/www/src
     working_dir: /var/www/html
     networks:
-      - nrv.db.1
-      - nrv.net.1
-      - nrv.net.2
+      - nrv.net
+
     depends_on:
       - mysql-db
     environment:
@@ -34,30 +28,40 @@ services:
       - DB_NAME=nrvdb
 
   mysql-db:
-    hostname: mysql
+    hostname: mysql:5.7
     image: mysql
+    command: --lower_case_table_names=2
     environment:
       - MYSQL_ROOT_PASSWORD=rootpassuseless
       - MYSQL_USER=nrvuser
       - MYSQL_PASSWORD=nrvpass
       - MYSQL_DATABASE=nrvdb
     volumes:
-      - ./databases:/var/lib/mysql
+      - ./databasesv2:/var/lib/mysql
     ports:
       - "18001:3306"
     networks:
-      - nrv.db.1
-      - nrv.db.2
+      - nrv.net
 
   phpmyadmin-manager:
     hostname: php-my-admin
     image: phpmyadmin
     environment:
-      - PMA_HOST=mysql-db
+      - PMA_ARBITRARY=1
     ports:
       - "18011:80"
     networks:
-      - nrv.db.2
+      - nrv.net
+    depends_on:
+      - mysql-db
+
+
+  adminer:
+    image: adminer
+    ports:
+      - "18012:8080"
+    networks:
+      - nrv.net
     depends_on:
       - mysql-db
 
@@ -74,7 +78,7 @@ services:
       - ../nrv.web/client/src/json:/usr/share/nginx/html/json
       - ../nrv.web/client/src/scss:/usr/share/nginx/html/scss
     networks:
-      - nrv.net.1
+      - nrv.net
     depends_on:
       - php-api
 
@@ -86,6 +90,6 @@ services:
     volumes:
       - ../nrv.web/backoffice:/usr/share/nginx/html
     networks:
-      - nrv.net.2
+      - nrv.net
     depends_on:
       - php-api
