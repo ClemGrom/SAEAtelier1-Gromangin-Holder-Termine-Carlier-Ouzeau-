@@ -154,7 +154,7 @@ var jsonprog = {
         "desc": "Les tubes pop les plus récents interprétés par des artistes talentueux.",
         "date": "07/06/24",
         "img": "https://images.pexels.com/photos/11063356/pexels-photo-11063356.jpeg",
-        "imgalt" : "misque hip-hop",
+        "imgalt" : "musique hip-hop",
         "lien": "index.html"
     },
     3: {
@@ -170,8 +170,8 @@ var jsonprog = {
         "id": "4",
         "titre": "R&B Grooves",
         "desc": "Les meilleures chansons R&B pour une soirée pleine de grooves et de vibes.",
-        "date": "12/09/24",
-        "img": "https://assets.rappler.com/6E110DE3AD774C24AD5175F5A8988EDC/img/A68E716ABCA74221A6D12A60A293E985/BonesThugsHarmony_IMG_0804.jpg",
+        "date": "12/09/24"https://assets.rappler.com/6E110DE3AD774C24AD5175F5A8988EDC/img/A68E716ABCA74221A6D12A60A293E985/BonesThugsHarmony_IMG_0804.jpg,
+        "img": "",
         "imgalt" : "musique R&B",
         "lien": "index.html"
     },
