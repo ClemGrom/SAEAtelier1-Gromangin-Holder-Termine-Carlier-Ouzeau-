@@ -170,8 +170,8 @@ var jsonprog = {
         "id": "4",
         "titre": "R&B Grooves",
         "desc": "Les meilleures chansons R&B pour une soirée pleine de grooves et de vibes.",
-        "date": "12/09/24"https://assets.rappler.com/6E110DE3AD774C24AD5175F5A8988EDC/img/A68E716ABCA74221A6D12A60A293E985/BonesThugsHarmony_IMG_0804.jpg,
-        "img": "",
+        "date": "12/09/24",
+        "img": "https://assets.rappler.com/6E110DE3AD774C24AD5175F5A8988EDC/img/A68E716ABCA74221A6D12A60A293E985/BonesThugsHarmony_IMG_0804.jpg",
         "imgalt" : "musique R&B",
         "lien": "index.html"
     },
