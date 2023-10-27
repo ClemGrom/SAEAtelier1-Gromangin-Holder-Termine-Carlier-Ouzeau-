@@ -83,12 +83,10 @@ section {
   margin-left: 2.7%;
 }
 section h1 {
-  font-size: 1em;
   width: 94.6%;
   margin-left: 2.7%;
 }
 section h2 {
-  font-size: 0.8em;
   width: 94.6%;
   margin-left: 2.7%;
 }
@@ -100,8 +98,63 @@ section div {
   margin-left: 2.7%;
 }
 section div img {
-  height: 100px;
-  width: 100px;
+  height: 200px;
+  width: 200px;
+  padding: 2%;
+}
+
+#lsbillets {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+#lsbillets div {
+  background-color: #F7596F;
+  border-radius: 10px;
+  display: grid;
+  margin: 10px;
+  padding: 10px;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto auto auto auto;
+  gap: 10px;
+}
+#lsbillets div img {
+  grid-column: 1;
+  grid-row: 1/span 4;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+}
+#lsbillets div p:nth-child(1) {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 2em;
+  font-weight: bold;
+}
+#lsbillets div p:nth-child(2) {
+  grid-column: 2;
+  grid-row: 1;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: right;
+}
+#lsbillets div p:nth-child(3) {
+  grid-column: 2;
+  grid-row: 2;
+  text-align: center;
+  font-size: 2.5em;
+}
+#lsbillets div p:nth-child(4) {
+  grid-column: 2;
+  grid-row: 3;
+  text-align: left;
+  font-size: 2em;
+}
+#lsbillets div p:nth-child(5) {
+  grid-column: 2;
+  grid-row: 4;
+  text-align: right;
+  font-size: 2em;
 }
 
 /*# sourceMappingURL=billets.css.map */

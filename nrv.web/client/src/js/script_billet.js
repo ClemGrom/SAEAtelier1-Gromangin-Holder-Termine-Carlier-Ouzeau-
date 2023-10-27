@@ -60,33 +60,37 @@ if (nbjson !== 0) {
         pic.src = jsonbillets[i]['image']; // lien vers l'image
         pic.alt = jsonbillets[i]['altimage']; // description de l'image
         
+        // Bloc texte
+        let bltext = document.createElement('div');
+        billet.appendChild(bltext);
+
         // titre soirée
         let title = document.createElement('p');
-        billet.appendChild(title);
+        bltext.appendChild(title);
         let ctntitle =  document.createTextNode(jsonbillets[i]['titre']);
         title.appendChild(ctntitle);
         
         // prix
         let price = document.createElement('p');
-        billet.appendChild(price);
+        bltext.appendChild(price);
         let ctnprice = document.createTextNode(jsonbillets[i]['prix']);
         price.appendChild(ctnprice);
         
         // description
         let desc = document.createElement('p');
-        billet.appendChild(desc);
+        bltext.appendChild(desc);
         let ctndesc = document.createTextNode(jsonbillets[i]['desc']);
         desc.appendChild(ctndesc);
         
         // date de la soirée
         let date = document.createElement('p');
-        billet.appendChild(date);
+        bltext.appendChild(date);
         let ctndate = document.createTextNode("pour " + jsonbillets[i]['date']);
         date.appendChild(ctndate);
         
         // date d'achat
         let buyed = document.createElement('p');
-        billet.appendChild(buyed);
+        bltext.appendChild(buyed);
         let ctnbuyed = document.createTextNode("achat le " + jsonbillets[i]['achat']);
         buyed.appendChild(ctnbuyed);
         
