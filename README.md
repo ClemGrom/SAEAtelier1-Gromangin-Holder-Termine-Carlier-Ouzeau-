@@ -3,3 +3,5 @@
 Application de billeterie pour le festival de musique fictif "Nancy Rock Vibration"
 
 Crée par Gromangin, Holder, Termine, Carlier et Ouzeau
+
+Test autoupdate
