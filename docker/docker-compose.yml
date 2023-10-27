@@ -67,7 +67,12 @@ services:
     ports:
       - "8121:80"
     volumes:
-      - ../nrv.web/client:/usr/share/nginx/html
+      - ../nrv.web/client/src/html:/usr/share/nginx/html
+      - ../nrv.web/client/src/css:/usr/share/nginx/html/css
+      - ../nrv.web/client/src/js:/usr/share/nginx/html/js
+      - ../nrv.web/client/src/image:/usr/share/nginx/html/image
+      - ../nrv.web/client/src/json:/usr/share/nginx/html/json
+      - ../nrv.web/client/src/scss:/usr/share/nginx/html/scss
     networks:
       - nrv.net.1
     depends_on:
