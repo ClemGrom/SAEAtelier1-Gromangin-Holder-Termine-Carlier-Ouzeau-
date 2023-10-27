@@ -3,56 +3,109 @@
 
 h1 {
     font-size: 1.8em;
+    color:red;
+    background-color: transparent;
+    padding-left:5%;
 }
 
-div {
-    img {
-        height: 250px;
-        width: auto;
-        display: block;
-        position: relative;
-    }
+nav{
+    padding-left: 5%;
 }
 
-#ctnprog {
+#ctnprog{
     display: grid;
-    grid-template-columns: auto auto auto;
-    gap: 2em;
     margin-top: 2em;
     margin-bottom: 2em;
-}
-
-.programme-item {
-    align-items: center;
-    border-radius: 10px;
-    position: relative;
-
+    gap: 2em;
     img{
-        display: block;
-        border-radius: 10px;
+        border-radius:10px;
     }
-
-    h3, p {
-        position:absolute;
-        border:#32BFE0 solid 1px;
-        background-color: #32BFE0;
+    a{
+        display:flex;
+        background-color: lightblue;
+        border-radius: 10px;
         padding: 10px;
-        border-radius: 10px;
-        color: #fff;
-        font-size:1em;
-        font-weight: bold;
-    }
-    h3{
-        top:-5%;
-    }
-    h3+p{
-        top: 50%;
-        left: 40%;
-        transform: translate(-50%, -50%);
-    }
-    p+p{
-        top: 2%;
-        right: 11%;
-        transform: translate(-50%, -50%);
+        text-align: center;
+        position: relative;
+        h3, p {
+            position:absolute;
+            border:#32BFE0 solid 1px;
+            background-color: #32BFE0;
+            padding: 10px;
+            border-radius: 10px;
+            color: #fff;
+            font-weight: bold;
+            font-size:0.86em;
+        }
+        h3{
+            top: 5px;
+            left: 20px;
+        }
+        h3+p{
+            top: 230px;
+            left: 0px;
+            margin: 0 5%;
+        }
+        p+p{
+            top: 5px;
+            right: 20px;
+        }
     }
 }
+
+@media screen and (min-width:1361px){
+    #ctnprog{
+        grid-template-columns: auto auto auto;
+        img{
+            width:400px;
+            height:300px;
+        }
+        a{
+            width: 400px;
+        }
+    }
+}
+
+
+@media screen and (max-width:1360px){
+    #ctnprog {
+        grid-template-columns: auto auto;
+        img {
+            width:300px;
+            height:200px;
+        }
+        a{
+            width: 300px;
+            h3, p {
+                font-size:0.66em;
+            }
+            h3+p{
+                transform: translate(0%, -170%);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:705px){
+    #ctnprog {
+        grid-template-columns: auto;
+        img {
+            width:300px;
+            height:200px;
+        }
+        a{
+            width: 100%;
+            h3, p {
+                font-size:1em;
+            }
+            h3+p{
+                width:40%;
+                transform: translate(110%, -150%);
+            }
+            h3{
+                transform: translate(170%, 0%);
+            }
+        }
+    }
+}
+

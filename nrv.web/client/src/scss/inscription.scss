@@ -1,0 +1,49 @@
+@import '_reset.scss';
+@import 'style.scss';
+
+h1 {
+    color: red;
+    font-size: 1.8em;
+    background-color: transparent;
+    padding-left: 5%;
+}
+
+.formulaire {   
+    background-color: #F7596F;
+    border-radius: 10px;
+    margin-left:100px;
+    margin-right:100px;
+    padding-top:10px;
+    padding-bottom:10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    div{
+        align-items: center;
+        border: 2px solid #333;
+        width: 400px;
+        border-radius: 10px;
+        padding:10px;
+        margin: 2%;
+        
+        input{
+            width: 90%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+    }
+    input[type="submit"] {
+        background-color: black;
+        color: #fff;
+        border: none;
+        border-radius: 10px;
+        padding: 10px;
+    }
+    a {
+        padding-top:1%;
+        text-decoration: none;
+        color: rgb(26, 26, 242);
+      }
+}

@@ -38,6 +38,10 @@ header {
   margin-left: 2.7%;
   background-color: #F7596F;
 }
+header a {
+  text-decoration: none;
+  color: white;
+}
 header img {
   width: 94.6%;
   margin-left: 2.7%;
@@ -62,6 +66,8 @@ footer {
   margin-left: 2.7%;
   background-color: #32BFE0;
   text-align: center;
+  margin-top: 5%;
+  padding: 0.5%;
 }
 footer nav {
   width: 94.6%;
@@ -70,54 +76,107 @@ footer nav {
 
 h1 {
   font-size: 1.8em;
+  color: red;
+  background-color: transparent;
+  padding-left: 5%;
 }
 
-div img {
-  height: 250px;
-  width: auto;
-  display: block;
-  position: relative;
+nav {
+  padding-left: 5%;
 }
 
 #ctnprog {
   display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 2em;
   margin-top: 2em;
   margin-bottom: 2em;
+  gap: 2em;
 }
-
-.programme-item {
-  align-items: center;
+#ctnprog img {
   border-radius: 10px;
+}
+#ctnprog a {
+  display: flex;
+  background-color: lightblue;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
   position: relative;
 }
-.programme-item img {
-  display: block;
-  border-radius: 10px;
-}
-.programme-item h3, .programme-item p {
+#ctnprog a h3, #ctnprog a p {
   position: absolute;
   border: #32BFE0 solid 1px;
   background-color: #32BFE0;
   padding: 10px;
   border-radius: 10px;
   color: #fff;
-  font-size: 1em;
   font-weight: bold;
+  font-size: 0.86em;
 }
-.programme-item h3 {
-  top: -5%;
+#ctnprog a h3 {
+  top: 5px;
+  left: 20px;
 }
-.programme-item h3 + p {
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
+#ctnprog a h3 + p {
+  top: 230px;
+  left: 0px;
+  margin: 0 5%;
 }
-.programme-item p + p {
-  top: 2%;
-  right: 11%;
-  transform: translate(-50%, -50%);
+#ctnprog a p + p {
+  top: 5px;
+  right: 20px;
+}
+
+@media screen and (min-width: 1361px) {
+  #ctnprog {
+    grid-template-columns: auto auto auto;
+  }
+  #ctnprog img {
+    width: 400px;
+    height: 300px;
+  }
+  #ctnprog a {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 1360px) {
+  #ctnprog {
+    grid-template-columns: auto auto;
+  }
+  #ctnprog img {
+    width: 300px;
+    height: 200px;
+  }
+  #ctnprog a {
+    width: 300px;
+  }
+  #ctnprog a h3, #ctnprog a p {
+    font-size: 0.66em;
+  }
+  #ctnprog a h3 + p {
+    transform: translate(0%, -170%);
+  }
+}
+@media screen and (max-width: 705px) {
+  #ctnprog {
+    grid-template-columns: auto;
+  }
+  #ctnprog img {
+    width: 300px;
+    height: 200px;
+  }
+  #ctnprog a {
+    width: 100%;
+  }
+  #ctnprog a h3, #ctnprog a p {
+    font-size: 1em;
+  }
+  #ctnprog a h3 + p {
+    width: 40%;
+    transform: translate(110%, -150%);
+  }
+  #ctnprog a h3 {
+    transform: translate(170%, 0%);
+  }
 }
 
 /*# sourceMappingURL=programmation.css.map */
