@@ -8,6 +8,7 @@ use nrv\api\services\SpectacleServices;
 use nrv\api\services\UtilisateurServices;
 use Psr\Container\ContainerInterface;
 use nrv\api\services\LieuServices;
+use nrv\api\services\ArtisteServices;
 
 return [
         "spectacle.service" => function (ContainerInterface $container) {
@@ -25,5 +26,8 @@ return [
 
         "lieu.service" => function (ContainerInterface $container) {
             return new LieuServices();
+        },
+        "artiste.service" => function (ContainerInterface $container) {
+            return new ArtisteServices();
         },
 ];

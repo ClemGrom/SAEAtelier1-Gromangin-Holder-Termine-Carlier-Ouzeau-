@@ -2,12 +2,14 @@
 
 namespace nrv\api\config\containers;
 
+use nrv\api\actions\GetArtisteAPIAction;
 use nrv\api\actions\GetLieuAPIAction;
 use nrv\api\actions\GetLieuxAPIAction;
 use nrv\api\actions\GetSoireeAPIAction;
 use nrv\api\actions\GetSpectacleAPIAction;
 use nrv\api\actions\GetSpectaclesAPIAction;
 use Psr\Container\ContainerInterface;
+
 
 return [
         GetSoireeAPIAction::class => function (ContainerInterface $container) {
@@ -25,6 +27,10 @@ return [
         },
         GetLieuAPIAction::class => function (ContainerInterface $container) {
             return new GetLieuAPIAction($container->get("lieu.service"));
+        },
+
+        GetArtisteAPIAction::class => function (ContainerInterface $container) {
+            return new GetArtisteAPIAction($container->get("artiste.service"));
         },
 
 ];
