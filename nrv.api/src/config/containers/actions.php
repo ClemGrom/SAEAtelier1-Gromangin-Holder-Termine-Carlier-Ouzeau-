@@ -8,6 +8,7 @@ use nrv\api\actions\GetLieuxAPIAction;
 use nrv\api\actions\GetSoireeAPIAction;
 use nrv\api\actions\GetSpectacleAPIAction;
 use nrv\api\actions\GetSpectaclesAPIAction;
+use nrv\api\actions\GetThemeAPIAction;
 use Psr\Container\ContainerInterface;
 
 
@@ -32,5 +33,8 @@ return [
         GetArtisteAPIAction::class => function (ContainerInterface $container) {
             return new GetArtisteAPIAction($container->get("artiste.service"));
         },
+        GetThemeAPIAction::class => function (ContainerInterface $container) {
+            return new GetThemeAPIAction($container->get("theme.service"));
+        },
 
-];
+]; 

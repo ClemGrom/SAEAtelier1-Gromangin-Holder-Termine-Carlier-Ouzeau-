@@ -2,27 +2,29 @@
 
 namespace nrv\api\actions;
 
-use nrv\api\renderer\JSONRenderer;
-use nrv\api\services\LieuServices;
+use nrv\api\services\ThemeServices;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Exception\HttpBadRequestException;
+use nrv\api\renderer\JSONRenderer;
 
-class GetLieuxAPIAction{
-    private LieuServices $lieuServices;
-    public function __construct(LieuServices $lieuServices)
+
+class GetThemeAPIAction{
+    private ThemeServices $themeServices;
+
+    public function __construct(ThemeServices $themeServices)
     {
-        $this->lieuServices = $lieuServices;
+        $this->themeServices = $themeServices;
     }
 
     public function __invoke(ServerRequestInterface $rq, ResponseInterface $rs, array $args): ResponseInterface{
+        $id = $args['id'] ?? null;
+        if (is_null($id)) throw new HttpBadRequestException($rq, 'id theme manquant');
+
         try{
-            $lieux = $this->lieuServices->getLieux();
+            $theme = $this->themeServices->getTheme($id);
             $data = ['type' => 'ressource',
-                "lieux" => []];
-            foreach ($lieux as $lieu) {
-                $data['lieux'][] = [$lieu];
-            }
+                "theme" => $theme];
             $code = 200;
         }catch (HttpBadRequestException $e) {
             $data = [
@@ -38,6 +40,5 @@ class GetLieuxAPIAction{
             $code = 404;
         }
         return JSONRenderer::render($rs, $code, $data);
-        
     }
-}
+    }

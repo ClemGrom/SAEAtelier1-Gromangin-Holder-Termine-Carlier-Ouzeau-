@@ -7,6 +7,7 @@ use nrv\api\actions\GetSpectaclesAPIAction;
 use nrv\api\actions\GetLieuxAPIAction;
 use nrv\api\actions\GetLieuAPIAction;
 use nrv\api\actions\GetArtisteAPIAction;
+use nrv\api\actions\GetThemeAPIAction;
 use Slim\App;
 
 return function (App $app): void {
@@ -19,4 +20,5 @@ return function (App $app): void {
     $app->get('/lieux[/]', GetLieuxAPIAction::class)->setName('lieux');
     $app->get('/lieu/{id}[/]', GetLieuAPIAction::class)->setName('lieu');  
     $app->get('/artiste/{id}[/]', GetArtisteAPIAction::class)->setName('artiste');
+    $app->get('/theme[/{id}[/]]', GetThemeAPIAction::class)->setName('theme');
 };
