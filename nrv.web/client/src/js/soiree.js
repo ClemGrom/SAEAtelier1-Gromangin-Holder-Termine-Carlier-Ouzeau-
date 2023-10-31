@@ -7,7 +7,7 @@ function getSoireeById(id) {
 
 function getSoirees(trie, id) {
     if (trie && id) {
-        return load(api_link + "/soirees/" + trie + "/" + id);
+        return load(api_link+ "/soirees/" + trie + "/" + id);
     } else {
         return load(api_link+"/soirees/");
 
