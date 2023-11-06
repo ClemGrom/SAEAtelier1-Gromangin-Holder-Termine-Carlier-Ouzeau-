@@ -26,7 +26,7 @@ class GetSoireeAPIAction
         if (is_null($id)) throw new HttpBadRequestException($rq, 'id soiree manquant');
 
         try {
-            $soiree = $this->soireeServices->getSoiree($id);
+            $soiree = $this->soireeServices->getSoiree(intval($id));
             $data = ['type' => 'ressource',
                 "soiree" => $soiree];
             $code = 200;
